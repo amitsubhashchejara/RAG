@@ -44,26 +44,26 @@ You can get Unstructured api key and url here:
   * Define a function to extract elements from a PDF file:
   * ```
     def get_elements_from_pdf(filename):
-    with open(filename, "rb") as f:
-        files = shared.Files(
-            content=f.read(),
-            file_name=filename,
-        )
-    req = shared.PartitionParameters(
-        files=files,
-        strategy='hi_res',
-        pdf_infer_table_structure=True,
-        languages=["eng"],
-    )
-    try:
-        resp = s.general.partition(req)
-    except SDKError as e:
-        print(e)
-    return resp
+     with open(filename, "rb") as f:
+         files = shared.Files(
+             content=f.read(),
+             file_name=filename,
+         )
+     req = shared.PartitionParameters(
+         files=files,
+         strategy='hi_res',
+         pdf_infer_table_structure=True,
+         languages=["eng"],
+     )
+     try:
+         resp = s.general.partition(req)
+     except SDKError as e:
+         print(e)
+     return resp
     ```
 
 ### Example Usage
-  *```
+  *   ```
       filename = "file path"
       response = get_elements_from_pdf(filename)
       print(json.dumps(response.elements[:3], indent=2))
