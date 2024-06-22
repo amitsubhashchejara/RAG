@@ -7,8 +7,8 @@ The code is designed to handle various dependencies and set up the user secrets 
 
 ### Install Dependencies
   * Run the following commands to install the necessary packages:
-  * '''!pip install -q unstructured
-       !pip install -q sentence-transformers'''
+  * ```!pip install -q unstructured
+       !pip install -q sentence-transformers```
     
 ### Import Dependencies
   * Import the required libraries:
